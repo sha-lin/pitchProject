@@ -1,0 +1,3 @@
+Hello {{user.username}}
+Welcome to pitch app
+We hope that the content you find on our website will be of use.
