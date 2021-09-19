@@ -1,18 +1,52 @@
-{% extends 'base.html' %}
-{% import 'macros.html' as macro %}
+{% extends 'base.html'%}
 
-{% block content %}
-    <h1 class="text-center pt-3">Welcome to Pitch-60 Seconds</h1>
-    {% if current_user.is_authenticated %}
-    <a href="/pitch/new" class="btn btn-success my-3 " style="font-size:small; margin-left:10vh" >New Pitch</a>
-    {% endif %}
-    <hr>
-    {%if pitches%}
-    <div class="row">
-        {{macro.displayPitches(pitches)}}
-    </div>
-    {% else %}
-    <h3 class="text-center">Sign in to Post Pitches!</h3>
-    {% endif %}
-    
+<!-- styles block -->
+{% block styles%} {{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 {% endblock %}
+{% block content %}
+
+<body>
+  <br>
+  <div class="d-flex justify-content-center">
+    <div class="card-groups">
+      <div class="card border-info mb-3" style="max-width: 35rem;">
+        <div class="card-header">Interview..</div>
+        <div class="card-body text-info">
+          <h5 class="card-title">Interview Pitch</h5>
+          <p class="card-text">Change people's mindset concerning interviews and give them ideas on how to conduct themselves better.</p>
+          <button type="button" class="btn btn-outline-primary"><a href="../pitch/">Add Pitch</a></button>
+          <button type="button" class="btn btn-outline-primary"><a href="/categories/life">Read Pitches</a></button>
+        </div>
+      </div>
+
+      <!-- random pitches -->
+      <div class="card border-info mb-3" style="max-width: 35rem;">
+        <div class="card-header">Just-Randomly</div>
+        <div class="card-body text-info">
+          <h5 class="card-title">Random Pitches</h5>
+          <p class="card-text">Take this takeaway to display any random pitch inyour mind.Just being un-categorical you know...</p>
+          <button type="button" class="btn btn-outline-primary"><a href="../pitch/">Add Pitch</a></button>
+          <button type="button" class="btn btn-outline-primary"><a href="/categories/coding">Read Pitches</a></button>
+        </div>
+      </div>
+
+      <!-- pitches about promotion -->
+      <div class="card border-info mb-3" style="max-width: 35rem;">
+        <div class="card-header">Promotion</div>
+        <div class="card-body text-info">
+          <h5 class="card-title">Promotion Pitches</h5>
+          <p class="card-text">Want to change peoples mindsets, then give a pitch on how best to make things real!!</p>
+          <button type="button" class="btn btn-outline-primary"><a href="../pitch/">Add Pitch</a></button>
+          <button type="button" class="btn btn-outline-primary"><a href="/categories/Education">Read Pitches</a></button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {% endblock%}
+</body>
