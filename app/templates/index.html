@@ -2,7 +2,7 @@
 {% import 'macros.html' as macro %}
 
 {% block content %}
-    <h1 class="text-center pt-3">Welcome to Pitch App</h1>
+    <h1 class="text-center pt-3">Welcome to Pitch-60 Seconds</h1>
     {% if current_user.is_authenticated %}
     <a href="/pitch/new" class="btn btn-success my-3 " style="font-size:small; margin-left:10vh" >New Pitch</a>
     {% endif %}
@@ -15,5 +15,4 @@
     <h3 class="text-center">Sign in to Post Pitches!</h3>
     {% endif %}
     
-    {% endblock %}
-</div>
+{% endblock %}

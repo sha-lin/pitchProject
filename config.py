@@ -7,10 +7,9 @@ class Config:
     # simple mde  configurations
     SIMPLEMDE_JS_IIFE=True
     SIMPLEMDE_USE_CDN=True
-    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SECRET_KEY = os.getenv('SECRET_KEY')
     SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://shalin:Chepkoech03@localhost/pitchh'
-    UPLOADED_PHOTOS_DEST='app/static/photos'
-
+    
     # email configurations
     MAIL_SERVER='smtp.googlemail.com'
     MAIL_PORT=587
@@ -24,7 +23,7 @@ class TestConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://shalin:Chepkoech03@localhost/test'
+    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://shalin:Chepkoech03@localhost/pitchh_test'
     pass
 
 class ProdConfig(Config):
@@ -35,12 +34,9 @@ class ProdConfig(Config):
     '''
     
 
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
     
     
-
-    # if SQLALCHEMY_DATABASE_URI.startswith("postgres://"):
-    #     SQLALCHEMY_DATABASE_URI = SQLALCHEMY_DATABASE_URI.replace("postgres://", "postgresql://",1)
         
 
 class DevConfig(Config):
@@ -57,3 +53,5 @@ config_options = {
 'production':ProdConfig,
 'test':TestConfig
 }
+
+
