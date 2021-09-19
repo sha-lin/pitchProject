@@ -1,26 +1,39 @@
 import unittest
-from app.models import User
+from app.models import User,Comments, Pitches
 
 class UserModelTest(unittest.TestCase):
-    """
-    set up
-    """
+    
+    def setUp(self):
+        self.new_user = User(password = 'banana')
 
-    # def test_password_setter(self):
-    #     """
-    #     Method that test if the password setter works.
-    #     """
-    #     self.assertTrue(self.new_user.pass_secure is not None)
+    def test_password_setter(self):
+        self.assertTrue(self.new_user.password_hash is not None)
 
-    # def test_no_access(self):
-    #     """
-    #     Method that tests if passwords cannot be viewed by users.
-    #     """
-    #     with self.assertRaises(AttributeError):
-    #         self.new_user.password
+    def test_no_access_password(self):
+        with self.assertRaises(AttributeError):
+            self.new_user.password
 
-    # def test_password_verification(self):
-    #     """
-    #     Method that tests if passwords are being verified correctly.
-    #     """
-    #     self.assertTrue(self.new_user.verify_password('Chepkoech03'))
+    def test_password_verification(self):
+        self.assertTrue(self.new_user.verify_password('banana'))
+
+class CommentsModelTest(unittest.TestCase):
+    
+    def setUp(self):
+       self.new_comment = Comments(id=1, user_id = 2, comment = 'cross buns',pitches_id = '5',date_posted='2021-09-09')
+
+    def test_comment_variables(self):
+
+       # self.assertEquals(self.new_comment.id, 2)
+       self.assertEquals(self.new_comment.comment,'cross buns')
+       self.assertEquals(self.new_comment.date_posted,'2021-09-09')
+       self.assertEquals(self.new_comment.user_id, 2)
+       # self.assertEquals(self.new_comment.pitches_id, 4)
+
+    def test_save_comment(self):
+
+        self.assertTrue(len(Comments.query.all())>0)
+
+class PitchesModelTest(unittest.TestCase):
+    
+    def test_save_pitch(self):
+        self.assertTrue(len(Pitches.query.all())>0)
