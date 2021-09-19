@@ -18,7 +18,7 @@ def login():
 
         flash('Invalid author or Password')
 
-    title = "Login to Pitches"
+    title = "Pitches login"
     return render_template('auth/login.html',login_form = login_form,title=title)
 
 
