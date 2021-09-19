@@ -1,29 +1,26 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #700caa;">
-    <a class="navbar-brand" href="/">PickUp</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #000d0e;">
+    <a class="navbar-brand" href="/">Welcome to Pitch-App</a>
+    
     <div class="collapse navbar-collapse display-6" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-        </li>
+        </li> <br><br>
         <li class="nav-item">
-          <a class="nav-link" href="/categories/life">Interview</a>
-        </li>
+          <a class="nav-link" href="/categories/Interview">Interview</a>
+        </li> <br><br>
         <li class="nav-item">
-          <a class="nav-link" href="/categories/coding">Promotion</a>
-        </li>
+          <a class="nav-link" href="/categories/Promotion">Promotion</a>
+        </li> <br><br>
         <li class="nav-item">
-          <a class="nav-link" href="/categories/funny">Random</a>
-        </li>
+          <a class="nav-link" href="/categories/random">Random</a>
+        </li> <br><br>
         <li class="nav-item">
             <a class="nav-link" href="/categories/funny">funny</a>
-        </li>
+        </li> <br><br>
         <li class="nav-item">
             <a class="nav-link" href="/categories/funny">product</a>
-        </li>
+        </li> <br><br>
       </ul>
 
       <!-- user section -->
@@ -33,7 +30,7 @@
           <a class="nav-link" href="{{url_for('main.profile',uname=current_user.author)}}">Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{url_for('auth.logout')}}">Sign out</a>
+          <a class="nav-link" href="{{url_for('auth.logout')}}">Log out</a>
         </li>
         {% else %}
         <li class="nav-item">

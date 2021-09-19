@@ -3,6 +3,10 @@
 <!-- styles block -->
 {% block styles%} {{ super() }}
 <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">"
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="static/css/style.css">
+
 
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
   integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -11,42 +15,63 @@
 
 <body>
   <br>
+  <div class="container">
+  <div class="row align-items-center">
+      <div class="col-md-12">
   <div class="d-flex justify-content-center">
     <div class="card-groups">
       <div class="card border-info mb-3" style="max-width: 35rem;">
         <div class="card-header">Interview..</div>
         <div class="card-body text-info">
           <h5 class="card-title">Interview Pitch</h5>
-          <p class="card-text">Change people's mindset concerning interviews and give them ideas on how to conduct themselves better.</p>
+          <p class="card-text">Change people's mindset and thinking concerning interviews and give them ideas on how to conduct themselves better.</p>
           <button type="button" class="btn btn-outline-primary"><a href="../pitch/">Add Pitch</a></button>
-          <button type="button" class="btn btn-outline-primary"><a href="/categories/life">Read Pitches</a></button>
+          <button type="button" class="btn btn-outline-primary"><a href="/categories/Interview">View Pitches</a></button>
         </div>
+      </div>
       </div>
 
       <!-- random pitches -->
+      <div class="col-md-6">
       <div class="card border-info mb-3" style="max-width: 35rem;">
         <div class="card-header">Just-Randomly</div>
         <div class="card-body text-info">
           <h5 class="card-title">Random Pitches</h5>
           <p class="card-text">Take this takeaway to display any random pitch inyour mind.Just being un-categorical you know...</p>
-          <button type="button" class="btn btn-outline-primary"><a href="../pitch/">Add Pitch</a></button>
-          <button type="button" class="btn btn-outline-primary"><a href="/categories/coding">Read Pitches</a></button>
+          <button type="button" class="btn btn-outline-secondary"><a href="../pitch/">Add Pitch</a></button>
+          <button type="button" class="btn btn-outline-secondary"><a href="/categories/Random">View Pitches</a></button>
         </div>
       </div>
-
+      </div>
+      <!-- random pitches -->
+      <div class="col">
+      <div class="card border-info mb-3" style="max-width: 35rem;">
+        <div class="card-header">Take a breather :)</div>
+        <div class="card-body text-info">
+          <h5 class="card-title">Funny Pitches</h5>
+          <p class="card-text">Post something to uplift our spirits :)...</p>
+          <button type="button" class="btn btn-outline-secondary"><a href="../pitch/">Add Pitch</a></button>
+          <button type="button" class="btn btn-outline-secondary"><a href="/categories/Random">View Pitches</a></button>
+        </div>
+      </div>
+      </div>
       <!-- pitches about promotion -->
+      <div class="col">
       <div class="card border-info mb-3" style="max-width: 35rem;">
         <div class="card-header">Promotion</div>
         <div class="card-body text-info">
           <h5 class="card-title">Promotion Pitches</h5>
-          <p class="card-text">Want to change peoples mindsets, then give a pitch on how best to make things real!!</p>
+          <p class="card-text">Take this opportunity to promote any product you wish!!</p>
           <button type="button" class="btn btn-outline-primary"><a href="../pitch/">Add Pitch</a></button>
-          <button type="button" class="btn btn-outline-primary"><a href="/categories/Education">Read Pitches</a></button>
+          <button type="button" class="btn btn-outline-primary"><a href="/categories/Promotion">View Pitches</a></button>
         </div>
       </div>
-
+      </div>
     </div>
+  </div>
+  </div>
   </div>
 
   {% endblock%}
+  
 </body>
