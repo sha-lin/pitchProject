@@ -1,4 +1,37 @@
-{% macro displayPitches(pitches)%}
+{% extends 'base.html'%}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+
+<br>
+<br>
+
+<body>
+  {% for comm in comment[::-1] %}
+  <div class="container">
+    <div class="card-groups">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">{{comm.author}}</h4>
+          <p class="card-text">{{comm.comment}}.</p>
+        </div>
+        <div class="card-footer bg-transparent border-success"><small class="text-muted">Publish date:{{comm.date_posted.strftime('%Y-%m-%d')}}</small></div>
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+
+  {% endblock %}
+</body>
+
+
+
+
+
+
+
+
+<!-- {% macro displayPitches(pitches)%}
 {%for pitch in pitches%}
 <div class="container">
     <div class="col-md-12 col-sm-6 mb-3 d-flex">
@@ -16,13 +49,13 @@
 {%endfor%}
 {%endmacro%}
 
-<!-- {%macro displayComments(comments_list)%}
+ <!-- {%macro displayComments(comments_list)%}
 {%for comment in comments_list%}
 
 {%endfor%}
-{%endmacro%} -->
+{%endmacro%}  -->
 
-{% macro categoryBadge(category) %}
+<!-- {% macro categoryBadge(category) %}
 {% if category == 'promotion' %}
 <span class="
         badge badge-pill badge-info p-2 mb-2" style="font-size: 1em">{{category}}</span>
@@ -41,4 +74,4 @@
 {% elif category == 'funny'%}
 <span class="badge badge-pill badge-info p-2 mb-2" style="font-size: 1em">{{category}}</span>
 {% endif %} 
-{% endmacro %}
+{% endmacro %} --> -->
