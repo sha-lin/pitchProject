@@ -30,7 +30,7 @@ def new_pitch():
         pitch= form.pitch.data
         title=form.title.data
 
-        # Updated pitch
+        # Updated pitchinstance
         new_pitch = Pitches(title=title,category= category,pitch= pitch,user_id=current_user.id)
 
         title='New Pitch'
@@ -41,8 +41,7 @@ def new_pitch():
 
     return render_template('pitch.html',pitch_entry= form)
 
-
-# main route categories
+    # main route categories
 @main.route('/categories/<cate>')
 def category(cate):
     '''

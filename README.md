@@ -1,4 +1,4 @@
-# Goal app
+# Pitch app
 Project entails an app where you can write,view and comment on pitches from various categories.Pitching is only due 1 minute.
 ## Author 
 * Shalin Rono

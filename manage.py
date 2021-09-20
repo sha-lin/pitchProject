@@ -5,7 +5,6 @@ from app.models import User, Pitches, Comments
 
 app = create_app('development')
 
-
 manager = Manager(app)
 manager.add_command('server',Server)
 
