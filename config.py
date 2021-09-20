@@ -8,6 +8,19 @@ class Config:
     #  image uploader
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+         # connecting to Gmail
+    MAIL_SERVER = 'smtp.googlemail.com'
+    MAIL_PORT = 587
+    MAIL_USE_TLS = True
+    MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
+    MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
+    SUBJECT_PREFIX = 'Pitch'
+    SENDER_EMAIL = 'shalin.rono@student.moringaschool.com'
+
+    # simple mde  configurations
+    SIMPLEMDE_JS_IIFE = True
+    SIMPLEMDE_USE_CDN = True
   
 
 class ProdConfig(Config):
@@ -33,27 +46,8 @@ class DevConfig(Config):
 
     DEBUG = True
 
-         # connecting to Gmail
-    MAIL_SERVER = 'smtp.googlemail.com'
-    MAIL_PORT = 587
-    MAIL_USE_TLS = True
-    MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
-    MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
-    SUBJECT_PREFIX = 'Pitch'
-    SENDER_EMAIL = 'shalin.rono@student.moringaschool.com'
-
-  # editor
-class Config:
-    # simple mde  configurations
-    SIMPLEMDE_JS_IIFE = True
-    SIMPLEMDE_USE_CDN = True
 
 
-    @staticmethod
-    def init_app(app):
-        pass
-
-  
 
 config_options = {
 'development':DevConfig,
