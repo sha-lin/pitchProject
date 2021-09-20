@@ -16,7 +16,7 @@ def index():
     return
     '''
     message= "Hello"
-    title= 'Pitch It Up!'
+    title= 'Pitch'
     return render_template('index.html', message=message,title=title)
 
 @main.route('/pitch/', methods = ['GET','POST'])
@@ -30,7 +30,7 @@ def new_pitch():
         pitch= form.pitch.data
         title=form.title.data
 
-        # Updated pitchinstance
+        # Updated pitch
         new_pitch = Pitches(title=title,category= category,pitch= pitch,user_id=current_user.id)
 
         title='New Pitch'
